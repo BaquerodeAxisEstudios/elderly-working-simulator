@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class PantallaPc : MonoBehaviour
 {
-    public bool encenido;
+    public bool encendido;
+    public GameObject canvasPantallaPc;
 
+    public void ControlEnergiaPantalla( bool en)
+    {
+        canvasPantallaPc.SetActive(en);
+
+        encendido = en;
+    }
 
 }

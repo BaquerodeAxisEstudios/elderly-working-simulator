@@ -5,21 +5,16 @@ using UnityEngine;
 public class PantallaPcPower : MonoBehaviour
 {
     public PantallaPc pantallaPc;
-
-    public int indice;
-    public BoxCollider miCollider;
-
-    public BoxCollider[] otrosColliders;
+    
     private void OnMouseDown()
     {
-        if (pantallaPc.encenido)
+        if (pantallaPc.encendido)
         {
-            MyGameManager.main.CambiarPosCamera(indice);
-            miCollider.enabled = false;
-            for (int i = 0; i < otrosColliders.Length; i++)
-            {
-                otrosColliders[i].enabled = true;
-            }
+            pantallaPc.ControlEnergiaPantalla(false);
+        }
+        else
+        {
+            pantallaPc.ControlEnergiaPantalla(true);
         }
     }
 }

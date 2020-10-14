@@ -6,16 +6,19 @@ using UnityEngine;
 public class CamTrig : MonoBehaviour
 {
     public int indice;
-    public BoxCollider miCollider;
+    public BoxCollider[] collidersDesactive;
 
-    public BoxCollider[] otrosColliders;
+    public BoxCollider[] collidersActivar;
     private void OnMouseDown()
     {
         MyGameManager.main.CambiarPosCamera(indice);
-        miCollider.enabled = false;
-        for (int i = 0; i < otrosColliders.Length; i++)
+        for (int i = 0; i < collidersDesactive.Length; i++)
         {
-            otrosColliders[i].enabled = true;
+            collidersDesactive[i].enabled = false;
+        }
+        for (int i = 0; i < collidersActivar.Length; i++)
+        {
+            collidersActivar[i].enabled = true;
         }   
     }
 }
