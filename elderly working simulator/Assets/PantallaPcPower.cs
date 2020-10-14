@@ -21,5 +21,7 @@ public class PantallaPcPower : MonoBehaviour
                 otrosColliders[i].enabled = true;
             }
         }
+
+        //casjnjca
     }
 }
